@@ -10,7 +10,7 @@ COPY . ${ENKETO_SRC_DIR}
 RUN npm install && \
     npm install https://github.com/kobotoolbox/enketo-image-customization-widget.git && \
     npm install https://github.com/kobotoolbox/enketo-literacy-test-widget.git && \
-    npm clean-install && \
+    # npm clean-install && \
     npx grunt && \
     npm prune --production && \
     rm config/config.json

@@ -22,11 +22,22 @@ jobs:
       # Set up a separate Docker environment to run `docker` commands in
       - setup_remote_docker
 
+      - restore_cache:
+          name: Restore node_modules from cache
+          keys:
+            - node-modules-{{ checksum "package-lock.json" }}
+
       # Build the hello world image
       - run:
           name: Build Docker image
           # Tag using the image tag above
           command: docker build --tag "${IMAGE_TAG}" .
+
+      - save_cache:
+          name: Cache node_modules
+          key: node-modules-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
 
       # Archive and persist the Docker image
       - run:

@@ -5,15 +5,18 @@ WORKDIR ${ENKETO_SRC_DIR}
 
 RUN npm install -g pm2@$(npm info pm2 version)
 
-COPY . ${ENKETO_SRC_DIR}
+# COPY . ${ENKETO_SRC_DIR}
+COPY package.json /${ENKETO_SRC_DIR}/package.json
 
-# RUN npm install && \
-#     npm install https://github.com/kobotoolbox/enketo-image-customization-widget.git && \
-#     npm install https://github.com/kobotoolbox/enketo-literacy-test-widget.git && \
-#     # npm clean-install && \
-#     npx grunt && \
-#     npm prune --production && \
-#     rm config/config.json
+RUN npm install && \
+    npm install https://github.com/kobotoolbox/enketo-image-customization-widget.git && \
+    npm install https://github.com/kobotoolbox/enketo-literacy-test-widget.git && \
+    # npm clean-install && \
+    npx grunt && \
+    npm prune --production && \
+    rm config/config.json
+
+COPY . ${ENKETO_SRC_DIR}
 
 # Persist the `secrets` directory so the encryption key remains consistent.
 RUN mkdir -p ${ENKETO_SRC_DIR}/setup/docker/secrets

@@ -22,29 +22,6 @@ jobs:
       # Set up a separate Docker environment to run `docker` commands in
       - setup_remote_docker
 
-      - restore_cache:
-          name: Restore node_modules from cache
-          keys:
-            - node-modules-{{ checksum "package-lock.json" }}
-
-      - run:
-          name: Install Dependencies
-          command: |
-            sudo apt update
-            sudo apt install nodejs npm
-            npm install && \
-            npm install https://github.com/kobotoolbox/enketo-image-customization-widget.git && \
-            npm install https://github.com/kobotoolbox/enketo-literacy-test-widget.git && \
-            npx grunt && \
-            npm prune --production && \
-            rm config/config.json
-
-      - save_cache:
-          name: Cache node_modules
-          key: node-modules-{{ checksum "package-lock.json" }}
-          paths:
-            - node_modules
-
       # Build the hello world image
       - run:
           name: Build Docker image

@@ -27,17 +27,27 @@ jobs:
           keys:
             - node-modules-{{ checksum "package-lock.json" }}
 
-      # Build the hello world image
       - run:
-          name: Build Docker image
-          # Tag using the image tag above
-          command: docker build --tag "${IMAGE_TAG}" .
+          name: Install Dependencies
+          command: |
+            npm install && \
+            npm install https://github.com/kobotoolbox/enketo-image-customization-widget.git && \
+            npm install https://github.com/kobotoolbox/enketo-literacy-test-widget.git && \
+            npx grunt && \
+            npm prune --production && \
+            rm config/config.json
 
       - save_cache:
           name: Cache node_modules
           key: node-modules-{{ checksum "package-lock.json" }}
           paths:
             - node_modules
+
+      # Build the hello world image
+      - run:
+          name: Build Docker image
+          # Tag using the image tag above
+          command: docker build --tag "${IMAGE_TAG}" .
 
       # Archive and persist the Docker image
       - run:

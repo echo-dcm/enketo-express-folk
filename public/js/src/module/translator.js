@@ -36,7 +36,7 @@ const initialize = new Promise((resolve, reject) => {
         .init(
             {
                 whitelist: settings.languagesSupported,
-                fallbackLng: 'en',
+                fallbackLng: 'my',
                 joinArrays: '\n',
                 backend: {
                     loadPath: LOADPATH,

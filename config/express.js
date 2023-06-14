@@ -41,7 +41,7 @@ i18next
     .init({
         // debug: true, // DEBUG
         whitelist: app.get('languages supported'),
-        fallbackLng: 'en',
+        fallbackLng: 'my',
         joinArrays: '\n',
         backend: {
             loadPath: path.resolve(

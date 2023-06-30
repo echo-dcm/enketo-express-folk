@@ -124,7 +124,7 @@ function _uploadRecord(record) {
 const uploadQueuedRecord = _uploadRecord;
 
 const uploadRecord = (survey, record) =>
-    setLast SavedRecord(survey, record).then(() => _uploadRecord(record));
+    setLastSavedRecord(survey, record).then(() => _uploadRecord(record));
 
 /**
  * Uploads a single batch of a single record.

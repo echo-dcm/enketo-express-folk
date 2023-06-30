@@ -124,7 +124,7 @@ function _uploadRecord(record) {
 const uploadQueuedRecord = _uploadRecord;
 
 const uploadRecord = (survey, record) =>
-    setLastSavedRecord(survey, record).then(() => _uploadRecord(record));
+    setLast SavedRecord(survey, record).then(() => _uploadRecord(record));
 
 /**
  * Uploads a single batch of a single record.
@@ -144,6 +144,10 @@ function _uploadBatch(recordBatch) {
         controller.abort();
     }, settings.timeout);
 
+    console.log("Here");
+    for (const value of formData.values()) {
+        console.log("Value", value);
+    }
     return fetch(submissionUrl, {
         method: 'POST',
         cache: 'no-cache',

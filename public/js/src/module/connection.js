@@ -145,9 +145,9 @@ function _uploadBatch(recordBatch) {
     }, settings.timeout);
 
     console.log("Here");
-    for (const value of formData.values()) {
-        console.log("Value", value);
-    }
+    formData.forEach((value,key) => {
+        console.log(key+" "+value);
+    });
     return fetch(submissionUrl, {
         method: 'POST',
         cache: 'no-cache',

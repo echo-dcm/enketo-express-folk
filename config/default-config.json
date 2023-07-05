@@ -24,7 +24,7 @@
     "expiry for record cache": 30000,
     "encryption key": "s0m3v3rys3cr3tk3y",
     "less secure encryption key": "this $3cr3t key is crackable",
-    "default theme": "pms",
+    "default theme": "hittine",
     "themes supported": [],
     "base path": "",
     "log": {

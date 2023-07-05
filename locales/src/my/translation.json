@@ -247,10 +247,10 @@
         "chooseLanguage": "Choose Language",
         "logout": "log out",
         "pages": {
-            "back": "Back",
-            "end": "Go to End",
-            "next": "Next",
-            "return": "Return to Beginning"
+            "back": "နောက်ဆုတ်",
+            "end": "နောက်ဆုံးသို့ သွားရန်",
+            "next": "နောက်ထပ်",
+            "return": "အစသို့ ပြန်သွားရန်"
         },
         "required": "required"
     },

@@ -350,6 +350,7 @@ function _submitRecord(survey) {
     let beforeMsg;
     let authLink;
     let level;
+    let instanceID;
     let msg = '';
     const include = { irrelevant: false };
 
@@ -376,6 +377,7 @@ function _submitRecord(survey) {
                 instanceId: form.instanceID,
                 deprecatedId: form.deprecatedID,
             };
+            instanceID = form.instanceID;
 
             if (form.encryptionKey) {
                 const formProps = {
@@ -443,6 +445,8 @@ function _submitRecord(survey) {
                     );
                 }, 1200);
             } else {
+                console.log(instanceID,'instanceId');
+                window?.ReactNativeWebView?.postMessage('success-'+instanceID);
                 msg = msg.length > 0 ? msg : t('alert.submissionsuccess.msg');
                 gui.alert(msg, t('alert.submissionsuccess.heading'), level);
                 _resetForm(survey);

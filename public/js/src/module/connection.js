@@ -115,6 +115,7 @@ function _uploadRecord(record) {
         )
         .then((results) => {
             console.log('results of all batches submitted', results);
+            console.log('results of all batches submitted', batches);
 
             result = results[0];
         })

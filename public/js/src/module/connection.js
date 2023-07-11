@@ -119,7 +119,7 @@ function _uploadRecord(record) {
 
             const hittinePostMessage = {
                     status:'success',
-                    instanceID:batches?.[0]?.instanceID
+                    instanceID:batches?.[0]?.instanceId
                 }
             console.log(hittinePostMessage,'instanceId');
             window?.ReactNativeWebView?.postMessage(JSON.stringify(hittinePostMessage));

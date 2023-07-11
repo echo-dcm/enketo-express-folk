@@ -117,6 +117,13 @@ function _uploadRecord(record) {
             console.log('results of all batches submitted', results);
             console.log('results of all batches submitted', batches);
 
+            const result = {
+                    status:'success',
+                    instanceID:batches?.[0]?.instanceID
+                }
+            console.log(result,'instanceId');
+            window?.ReactNativeWebView?.postMessage(JSON.stringify(result));
+            
             result = results[0];
         })
         .then(() => result);

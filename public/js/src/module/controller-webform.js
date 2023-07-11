@@ -445,8 +445,13 @@ function _submitRecord(survey) {
                     );
                 }, 1200);
             } else {
-                console.log(instanceID,'instanceId');
-                window?.ReactNativeWebView?.postMessage('success-'+instanceID);
+                const result = {
+                    status:'success',
+                    instanceID
+                }
+                console.log(result,'instanceId');
+                window?.ReactNativeWebView?.postMessage(JSON.stringify(result));
+
                 msg = msg.length > 0 ? msg : t('alert.submissionsuccess.msg');
                 gui.alert(msg, t('alert.submissionsuccess.heading'), level);
                 _resetForm(survey);
@@ -529,6 +534,8 @@ function _confirmRecordName(recordName, draft, errorMsg) {
 function _saveRecord(survey, draft, recordName, confirmed) {
     const include = { irrelevant: draft };
 
+    let instanceID;
+
     // triggering "before-save" event to update possible "timeEnd" meta data in form
     form.view.html.dispatchEvent(events.BeforeSave());
 
@@ -559,6 +566,8 @@ function _saveRecord(survey, draft, recordName, confirmed) {
                 enketoId: settings.enketoId,
                 files,
             };
+
+            instanceID = form.instanceID;
 
             // encrypt the record
             if (form.encryptionKey && !draft) {
@@ -603,6 +612,17 @@ function _saveRecord(survey, draft, recordName, confirmed) {
                 );
 
                 return true;
+            }
+
+            // hittine
+
+            if(!draft){
+                const result = {
+                    status:'pending',
+                    instanceID
+                }
+                console.log(result,'instanceId');
+                window?.ReactNativeWebView?.postMessage(JSON.stringify(result));
             }
 
             return records.uploadQueue({ isUserTriggered: !draft });

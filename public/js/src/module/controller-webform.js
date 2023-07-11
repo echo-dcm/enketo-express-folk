@@ -445,12 +445,13 @@ function _submitRecord(survey) {
                     );
                 }, 1200);
             } else {
-                const result = {
+
+                const hittinePostMessage = {
                     status:'success',
                     instanceID
                 }
-                console.log(result,'instanceId');
-                window?.ReactNativeWebView?.postMessage(JSON.stringify(result));
+                console.log(hittinePostMessage,'instanceId');
+                window?.ReactNativeWebView?.postMessage(JSON.stringify(hittinePostMessage));
 
                 msg = msg.length > 0 ? msg : t('alert.submissionsuccess.msg');
                 gui.alert(msg, t('alert.submissionsuccess.heading'), level);
@@ -617,12 +618,12 @@ function _saveRecord(survey, draft, recordName, confirmed) {
             // hittine
 
             if(!draft){
-                const result = {
+                const hittinePostMessage = {
                     status:'pending',
                     instanceID
                 }
-                console.log(result,'instanceId');
-                window?.ReactNativeWebView?.postMessage(JSON.stringify(result));
+                console.log(hittinePostMessage,'instanceId');
+                window?.ReactNativeWebView?.postMessage(JSON.stringify(hittinePostMessage));
             }
 
             return records.uploadQueue({ isUserTriggered: !draft });

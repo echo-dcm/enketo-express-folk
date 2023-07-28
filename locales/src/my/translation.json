@@ -135,10 +135,10 @@
     "changelog": "Change Log",
     "confirm": {
         "autosaveload": {
-            "heading": "Unsaved Record Found",
+            "heading": "ယခင်ဖြေဆိုမှု မပြီးပြတ်သေးပါ",
             "msg": "Enketo has found an unsaved record. Would you like to load this record or discard it?",
-            "negButton": "Discard",
-            "posButton": "Load Record"
+            "negButton": "အသစ်ဖြေဆိုမည်",
+            "posButton": "ဆက်လက်ဖြေဆိုမည်"
         },
         "default": {
             "heading": "Are you sure?",

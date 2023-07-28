@@ -25,6 +25,11 @@ progress {
     margin: 10px auto;
 }
 
+input:focus {
+  // hittine
+  outline: 1px solid #A26D4D;
+}
+
 // TODO: obsolete?
 .preview progress {
     margin: 80px auto;

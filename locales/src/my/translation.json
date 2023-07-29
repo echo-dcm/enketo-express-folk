@@ -136,7 +136,7 @@
     "confirm": {
         "autosaveload": {
             "heading": "ယခင်ဖြေဆိုမှု မပြီးပြတ်သေးပါ",
-            "msg": "Enketo has found an unsaved record. Would you like to load this record or discard it?",
+            "msg": "ယခင်ဖြေဆိုမှုကို ဆက်လက်ဖြေဆိုမည် သို့မဟုတ် အသစ်ဖြေဆိုမည်",
             "negButton": "အသစ်ဖြေဆိုမည်",
             "posButton": "ဆက်လက်ဖြေဆိုမည်"
         },

@@ -27,7 +27,8 @@ progress {
 
 input:focus {
   // hittine
-  outline: 1px solid #A26D4D;
+  border-color:#A26D4D !important;
+  box-shadow: none !important;
 }
 
 // TODO: obsolete?

@@ -2,6 +2,11 @@ section.form-footer
   .form-footer__content
     if !headless
       .form-footer__content__main-controls
+      a.btn.btn-primary.previous-page.disabled(href="#", data-i18n='form.pages.back')= t('form.pages.back')
+      a.btn.btn-primary.next-page(href="#")
+          i.icon.icon-arrow-right
+          span(data-i18n='form.pages.next')= t('form.pages.next')
+          
         if type === 'preview'
           button#validate-form.btn.btn-primary
             i.icon.icon-check= ' '
@@ -18,10 +23,6 @@ section.form-footer
           button#submit-form.btn.btn-primary
             i.icon.icon-check= ' '
             span(data-i18n='formfooter.submit.btn')= t('formfooter.submit.btn')
-        a.btn.btn-primary.previous-page.disabled(href="#", data-i18n='form.pages.back')= t('form.pages.back')
-        a.btn.btn-primary.next-page(href="#")
-          i.icon.icon-arrow-right
-          span(data-i18n='form.pages.next')= t('form.pages.next')
 
         include _logout
         //- include _enketo-power

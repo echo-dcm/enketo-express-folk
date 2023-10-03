@@ -2,10 +2,13 @@ section.form-footer
   .form-footer__content
     if !headless
       .form-footer__content__main-controls
-      a.btn.btn-primary.previous-page.disabled(href="#", data-i18n='form.pages.back')= t('form.pages.back')
+      a.btn.btn-primary.previous-page.disabled(href="#", data-i18n='form.pages.back', style='background-color: #f8ebe5; color: #9C6644')= svg(width="16" height="16" xmlns="http://www.w3.org/2000/svg")
+      path(d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z")
+    | t('form.pages.back')
       a.btn.btn-primary.next-page(href="#")
           i.icon.icon-arrow-right
-          span(data-i18n='form.pages.next')= t('form.pages.next')
+          span(data-i18n='form.pages.next')= t('form.pages.next') | svg(width="16" height="16" xmlns="http://www.w3.org/2000/svg")
+      path(d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z")
           
         if type === 'preview'
           button#validate-form.btn.btn-primary

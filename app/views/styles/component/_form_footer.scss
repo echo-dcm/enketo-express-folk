@@ -14,16 +14,22 @@
             width: 100%;
             text-align: center;
             position: relative;
+            // hittine
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+    
 
             .btn {
                 display: inline-block;
-                min-width: 180px;
+                // min-width: 180px;
+                border:0 !important;
                 position: static;
-                min-height: 32px;
+                // min-height: 32px;
                 // hittine - remove marginBottom
                 // margin-bottom: 30px;
-                margin-left: 20px;
-                margin-right: 20px;
+                // margin-left: 20px;
+                // margin-right: 20px;
 
                 progress {
                     margin: 0;

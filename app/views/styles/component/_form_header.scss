@@ -6,6 +6,7 @@ $offline-color: #d15200;
     flex-direction: row; // even for rtl UI
     text-align: left;
     align-items: center;
+    display: none;
 
     &__branding {
         order: 1;

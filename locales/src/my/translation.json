@@ -247,9 +247,9 @@
         "chooseLanguage": "Choose Language",
         "logout": "log out",
         "pages": {
-            "back": "နောက်ဆုတ်",
+            "back": "< နောက်ဆုတ်",
             "end": "နောက်ဆုံးသို့ သွားရန်",
-            "next": "နောက်ထပ်",
+            "next": "နောက်ထပ် >",
             "return": "အစသို့ ပြန်သွားရန်"
         },
         "required": "required"

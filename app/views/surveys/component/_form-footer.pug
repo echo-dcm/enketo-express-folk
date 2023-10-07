@@ -2,9 +2,8 @@ section.form-footer
   .form-footer__content
     if !headless
       .form-footer__content__main-controls
-        a.btn.btn-primary.previous-page.disabled(href="#", style='background-color: #f8ebe5; color: #9C6644')= t('form.pages.back')
-        a.btn.btn-primary.next-page(href="#")
-          span(data-i18n='form.pages.next')= t('form.pages.next')
+        a.btn.btn-primary.previous-page.disabled(href="#", data-i18n='form.pages.back', style='background-color: #f8ebe5; color: #9C6644')= t('form.pages.back')
+        a.btn.btn-primary.next-page(href="#", data-i18n='form.pages.next')= t('form.pages.next')
           
         if type === 'preview'
           button#validate-form.btn.btn-primary
@@ -14,7 +13,7 @@ section.form-footer
           button#close-form.btn.btn-default.hide
             span(data-i18n='alert.default.button')= t('alert.default.button')
         else
-          if draftEnabled && offlinePath
+          //- if draftEnabled && offlinePath
             //- button#save-draft.btn.btn-default
             //-   i.icon.icon-info-circle.save-draft-info= ' '
             //-   i.icon.icon-pencil= ' '

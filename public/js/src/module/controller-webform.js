@@ -455,7 +455,7 @@ function _submitRecord(survey) {
 
                 msg = msg.length > 0 ? msg : t('alert.submissionsuccess.msg');
                 gui.alert(msg, t('alert.submissionsuccess.heading'), level);
-                // _resetForm(survey);
+                _resetForm(survey);
             }
         })
         .catch((result) => {

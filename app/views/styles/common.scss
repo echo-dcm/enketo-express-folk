@@ -25,11 +25,18 @@ progress {
     margin: 10px auto;
 }
 
+// hittine - making full width in mobile size
+input{
+    width: 100% !important;
+}
+
 input:focus {
   // hittine
   border-color:#A26D4D !important;
   box-shadow: none !important;
 }
+
+
 
 // TODO: obsolete?
 .preview progress {

@@ -26,7 +26,7 @@ progress {
 }
 
 // hittine - making full width in mobile size
-input[type='text'],input[type='date'],input[type='time'],input[type='datetime-local'],input[type='number']{
+input[type='text'],input[type='date'],input[type='time'],input[type='datetime-local'],input[type='number'],textarea{
     width: 100% !important;
 }
 
@@ -35,7 +35,7 @@ input[type='text'],input[type='date'],input[type='time'],input[type='datetime-lo
     -webkit-box-shadow: none !important;
 }
 
-input:focus, select:focus {
+input:focus, select:focus, textarea:focus {
   // hittine
   border-color:#A26D4D !important;
   box-shadow: none !important;

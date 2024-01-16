@@ -26,11 +26,11 @@ progress {
 }
 
 // hittine - making full width in mobile size
-input{
+input[type='text'],input[type='date'],input[type='time'],input[type='datetime-local'],input[type='number']{
     width: 100% !important;
 }
 
-input:focus {
+input:focus, select:focus {
   // hittine
   border-color:#A26D4D !important;
   box-shadow: none !important;

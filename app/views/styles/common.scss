@@ -30,6 +30,11 @@ input[type='text'],input[type='date'],input[type='time'],input[type='datetime-lo
     width: 100% !important;
 }
 
+[type='range']:focus::-webkit-slider-thumb{
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
 input:focus, select:focus {
   // hittine
   border-color:#A26D4D !important;

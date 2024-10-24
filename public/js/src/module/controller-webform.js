@@ -452,7 +452,8 @@ function _submitRecord(survey) {
                 }
                 console.log(hittinePostMessage,'instanceId');
                 window?.ReactNativeWebView?.postMessage(JSON.stringify(hittinePostMessage));
-
+                // For web
+                window.parent.postMessage(JSON.stringify(hittinePostMessage));
                 msg = msg.length > 0 ? msg : t('alert.submissionsuccess.msg');
                 gui.alert(msg, t('alert.submissionsuccess.heading'), level);
                 // _resetForm(survey);
@@ -624,6 +625,8 @@ function _saveRecord(survey, draft, recordName, confirmed) {
                 }
                 console.log(hittinePostMessage,'instanceId');
                 window?.ReactNativeWebView?.postMessage(JSON.stringify(hittinePostMessage));
+                // For web
+                window.parent.postMessage(JSON.stringify(hittinePostMessage));
             }
 
             return records.uploadQueue({ isUserTriggered: !draft });

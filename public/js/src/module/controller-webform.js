@@ -454,6 +454,7 @@ function _submitRecord(survey) {
                 window?.ReactNativeWebView?.postMessage(JSON.stringify(hittinePostMessage));
                 // For web
                 window.parent.postMessage(JSON.stringify(hittinePostMessage));
+                console.log('hittinePostMessage is setup for HTWEB');
                 msg = msg.length > 0 ? msg : t('alert.submissionsuccess.msg');
                 gui.alert(msg, t('alert.submissionsuccess.heading'), level);
                 // _resetForm(survey);

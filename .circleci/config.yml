@@ -5,7 +5,7 @@ executors:
   docker-publisher:
     # Define the image tag
     environment:
-      IMAGE_TAG: echo15/enketo-express-folk:latest
+      IMAGE_TAG: echo15/enketo-express:latest
     # Use `docker:stable` as the Docker image for this executor
     docker:
       - image: cimg/base:2023.06

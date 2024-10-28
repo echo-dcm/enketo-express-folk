@@ -450,7 +450,7 @@ function _submitRecord(survey) {
                     status:'success',
                     instanceID
                 }
-                console.log(hittinePostMessage,'instanceId');
+                console.log(hittinePostMessage,'instanceId','webform');
                 window?.ReactNativeWebView?.postMessage(JSON.stringify(hittinePostMessage));
                 // For web
                 window.parent.postMessage(JSON.stringify(hittinePostMessage));

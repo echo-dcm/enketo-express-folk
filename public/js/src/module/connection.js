@@ -124,7 +124,7 @@ function _uploadRecord(record) {
             console.log(hittinePostMessage,'instanceId','connection');
             window?.ReactNativeWebView?.postMessage(JSON.stringify(hittinePostMessage));
             // For web
-            window.parent.postMessage(JSON.stringify(hittinePostMessage));
+            window.parent.postMessage(JSON.stringify(hittinePostMessage),'*');
             result = results[0];
         })
         .then(() => result);

@@ -122,6 +122,8 @@ function _uploadRecord(record) {
                     instanceID:batches?.[0]?.instanceId
                 }
             console.log(hittinePostMessage,'instanceId');
+            console.log('hittinePostMessage is setup for HTWEB','Success');
+
             window?.ReactNativeWebView?.postMessage(JSON.stringify(hittinePostMessage));
             // For web
             window.parent.postMessage(JSON.stringify(hittinePostMessage));
